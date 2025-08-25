@@ -31,7 +31,6 @@ document.addEventListener("mousedown", (e) => {
     let a = wtarget.getBoundingClientRect();
     let cx = x;
     let cy = y;
-    console.log(a);
 
     inter = setInterval(() => {
       if (isHolding) {
