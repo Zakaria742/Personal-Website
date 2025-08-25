@@ -177,11 +177,6 @@ document.addEventListener("click", (e) => {
     windows.removeChild(
       e.target.parentElement.parentElement.parentElement.parentElement
     );
-  } else if (e.target.classList[1] == "enlarge") {
-    e.target.parentElement.parentElement.parentElement.parentElement.style.width =
-      "100%";
-    e.target.parentElement.parentElement.parentElement.parentElement.style.height =
-      "100%";
   }
 });
 
@@ -206,11 +201,12 @@ document.addEventListener("mousedown", (e) => {
         <br/>
         <h3>Tasks : </h3>
         <p>playing games (current running time: not much)</p>
-        <p>Programming & coding (current running time : not good for mental health)</p>
+        <p>Programming & coding (current running time : too much for my mental health)</p>
         <br/>
         <h3>Services : </h3>
         <p>Python.Flask [|||||     ]</p>
         <p>JavaScript   [||||||    ]</p>
+        <p>SQL [||||||||| ]</p>
         <p>C            [||||||||  ]</p>
         <p>C++          [|||||||   ]</p>
 
