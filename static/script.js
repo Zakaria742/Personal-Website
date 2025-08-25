@@ -31,12 +31,12 @@ document.addEventListener("mousedown", (e) => {
     let a = wtarget.getBoundingClientRect();
     let cx = x;
     let cy = y;
-    console.log(a)
+    console.log(a);
 
     inter = setInterval(() => {
       if (isHolding) {
-        wtarget.parentElement.parentElement.style.left = `${x-cx + a.x}px`;
-        wtarget.parentElement.parentElement.style.top = `${y-cy + a.y}px`;
+        wtarget.parentElement.parentElement.style.left = `${x - cx + a.x}px`;
+        wtarget.parentElement.parentElement.style.top = `${y - cy + a.y}px`;
       }
     }, 0);
   }
@@ -52,10 +52,10 @@ document.addEventListener("dblclick", (e) => {
   let itarget = e.target.parentElement;
   if (itarget) {
     let div = document.createElement("div");
+    audio.src = open_win.src;
+    audio.type = open_win.type;
     switch (itarget.id) {
       case "about":
-        audio.src = open_win.src;
-        audio.type = open_win.type;
         audio.play();
 
         div.setAttribute("class", "window");
@@ -105,6 +105,7 @@ document.addEventListener("dblclick", (e) => {
         windows.appendChild(div);
         break;
       case "contact":
+        audio.play();
         div.style.left = `${window.innerWidth / 3}px`;
         div.style.top = `${window.innerHeight / 3}px`;
         div.setAttribute("class", "window");
