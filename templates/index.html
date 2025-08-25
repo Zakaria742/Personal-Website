@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Permission-Policy" content="speaker=(self)" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css') }}" />
+    <title>Website</title>
+</head>
+
+<body>
+    <audio src="{{ url_for('static', filename='assets/error.mp3')}}" id="S_err"></audio>
+
+    <audio id="click" src="{{ url_for ('static', filename='/assets/mouse_click.mp3' ) }}" type="audio/mp3"></audio>
+
+    <audio id="audio">
+      <source id="open" src="{{ url_for ('static', filename='/assets/open_win.mp3' ) }}" type="audio/mp3" />
+      <source id="close" src="{{ url_for ('static', filename='/assets/close_win.mp3' ) }}" type="audio/mp3"/>
+    </audio>
+    <div id="lIcons">
+        <div class="icon" id="about">
+            <img src="{{ url_for('static', filename='assets/main.ico') }}" alt="pc-icon" draggable="false" />
+
+            <p>about</p>
+        </div>
+        <div class="icon" id="projects">
+            <img src="{{ url_for('static', filename='assets/projects.ico') }}" alt="pc-icon" draggable="false" width="40" />
+            <p>Projects</p>
+        </div>
+        <div class="icon" id="contact">
+            <img src="{{ url_for('static', filename='assets/contact.ico') }}" alt="pc-icon" draggable="false" width="40" />
+            <p>Contact me</p>
+        </div>
+    </div>
+
+    <div id="windows">
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
