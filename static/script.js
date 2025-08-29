@@ -1,25 +1,35 @@
+//Variables for windows moving
 let x = (y = 0);
 let isHolding = false;
 let target;
 
+//Audio
 const audio = document.getElementById("audio");
 audio.volume = ".2";
 const open_win = document.getElementById("open");
 const close_win = document.getElementById("close");
 const click = document.getElementById("click");
-
 let error_audio = document.getElementById("S_err");
 let about = document.getElementById("about");
 let windows = document.getElementById("windows");
 let cls = document.querySelectorAll(".close");
 
+//Interval variable
 let inter;
+//Type of target we're holding
 let wtarget;
+//count for the layer index (z-index)
 let count = 0;
+
+//Screen revealer
+
+//Getting mouse position
 document.addEventListener("mousemove", function (e) {
   x = e.clientX;
   y = e.clientY;
 });
+
+//Checking for if the mouse is down
 document.addEventListener("mousedown", (e) => {
   wtarget = e.target;
   if (wtarget.classList[0] == "window-bar") {
@@ -41,12 +51,12 @@ document.addEventListener("mousedown", (e) => {
   }
 });
 
+//Letting go of the window in case of letting the mouse
 document.addEventListener("mouseup", () => {
   isHolding = false;
 });
 
-// Open window
-
+// Opening the window
 document.addEventListener("dblclick", (e) => {
   let itarget = e.target.parentElement;
   if (itarget) {
@@ -77,7 +87,7 @@ document.addEventListener("dblclick", (e) => {
           <li id="links">Links</li>
         </ul>
       <div id="content">
-    <img src="static/assets/goku(pixel).png" id="proPic" alt="profile-pic" width="200px" height="150px">
+    <img src="/static/assets/goku(pixel).png" id="proPic" alt="profile-pic" width="200px" height="150px">
         <div>
         <h1>Hello!</h1>
         <h3>System :</h3>
@@ -141,7 +151,7 @@ document.addEventListener("dblclick", (e) => {
         <div class="window error" id="error">
                 <div class="window-bar">
                     <div class="bar-title">
-                        <img src="static/assets/error.ico" alt="">
+                        <img src="/static/assets/error.ico" alt="">
                         <p>Access Denied</p>
                     </div>
                     <div>
@@ -162,12 +172,11 @@ document.addEventListener("dblclick", (e) => {
   }
 });
 
-//close window
-
+//closing window
 document.addEventListener("click", (e) => {
   click.volume = "0.1";
   click.play();
-
+  //audio for closing the window
   if (e.target.classList[1] == "close") {
     audio.src = close_win.src;
     audio.type = close_win.type;
@@ -179,7 +188,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-//about section
+//The about window sections (ME-LINKS)
 document.addEventListener("mousedown", (e) => {
   if (wtarget.id == "me") {
     wtarget.style.border = "solid 2px black";
@@ -191,7 +200,7 @@ document.addEventListener("mousedown", (e) => {
     wtarget.parentElement.nextElementSibling.style.alignSelf = "flex-end";
 
     wtarget.parentElement.nextElementSibling.innerHTML = `
-    <img src="static/assets/goku(pixel).png" id="proPic" alt="profile-pic" width="200px" height="150px">
+    <img src="/static/assets/goku(pixel).png" id="proPic" alt="profile-pic" width="200px" height="150px">
     <div>
         <h1>Hello!</h1>
         <h3>System :</h3>
@@ -231,3 +240,29 @@ document.addEventListener("mousedown", (e) => {
          </ul>`;
   }
 });
+
+//Random ads
+// const seconds = 50000000000000;
+// let adsInterval = setInterval(() => {
+  // const ad_window = document.createElement("div");
+  // ad_window.setAttribute("class", "window");
+  // ad_window.innerHTML = ` 
+  //       <div class="window ad" id="ad">
+  //                <div class="window-bar">
+  //                    <div class="bar-title">
+  //                        <img src="static/assets/error.ico" alt="">
+  //                        <p>Lorem Ipusm?</p>
+  //                    </div>
+  //                    <div>
+  //                        <div class="elements close" draggable="false">X</div>
+  //                    </div>
+  //                </div>
+  //                <div id="ad-content">
+  //                    <img src="/static/assets/goku(pixel).png" alt="">
+  //                </div>
+  //            </div>`;
+//   ad_window.style.translate = `${(Math.random() * window.innerWidth) / 2}px ${
+//     (Math.random() * window.innerHeight) / 2
+//   }px`;
+  //windows.appendChild(ad_window);
+// }, seconds * Math.pow(10, 3));

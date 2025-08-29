@@ -14,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     overflow: hidden;
+
 }
 
 .icon {
@@ -22,6 +23,7 @@ body {
     height: fit-content;
     user-select: none;
     text-align: center;
+    scale: 1.2;
     &>p {
         width: 50px;
         text-align: center;
@@ -89,12 +91,10 @@ body {
     width: 90%;
     justify-content: space-evenly;
     gap: 2rem;
-    max-height: 0%;
     align-self: flex-end;
     border: solid 2px rgb(136, 136, 136);
     overflow-y: hidden;
     margin: 2rem;
-    animation: show 4s alternate forwards;
     h1 {
         font-size: 3rem;
     }
@@ -102,25 +102,6 @@ body {
         text-align: start;
     }
 }
-
-@keyframes show {
-    0% {
-        max-height: 0%;
-    }
-    25% {
-        max-height: 25%;
-    }
-    30% {
-        max-height: 20%;
-    }
-    50% {
-        max-height: 50%;
-    }
-    100% {
-        max-height: 100%;
-    }
-}
-
 #proPic {
     border: solid 2px grey;
 }
@@ -206,5 +187,26 @@ body {
 #error {
     border: solid 1px;
     width: 30rem;
+}
 
+#ad-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem;
+    width: fit-content;
+    height: fit-content;
+    &>img{
+    overflow: auto;
+
+        outline: solid 2px rgb(255, 141, 141);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+#ad {
+    width: 30rem;
+    height: 12.5rem;
 }
