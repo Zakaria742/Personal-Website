@@ -2,8 +2,28 @@
 let x = (y = 0);
 let isHolding = false;
 let target;
+let body = document.getElementById("body");
+let load = document.getElementById("loading");
 
-//Audio
+console.log(load);
+let k = 0;
+
+let loadingInterval;
+if(loadingInterval){
+	clearInterval(loadingInterval);
+}
+loadingInterval= setInterval( () => {
+	load.children[0].innerText = "|/-\\"[k%4];
+	k++;
+}, 100)
+
+
+setTimeout( () => {
+	clearInterval(loadingInterval);
+	//load.style.animation = "fade 1s ease-out forwards alternate";
+	load.style.display = "none";
+}, 10000)
+
 const audio = document.getElementById("audio");
 audio.volume = ".2";
 const open_win = document.getElementById("open");
