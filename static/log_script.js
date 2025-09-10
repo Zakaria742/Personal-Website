@@ -5,7 +5,6 @@ let k = 0;
 
 let interval;
 
-
 let string = "abcdefghijklmnopqrstuvwxyz1234567890"
 let strlen = string.length;
 let gibberish = [];
@@ -47,26 +46,3 @@ lines.forEach( e => {
 	e.innerText = gibberish.join("");
 }
 )}, 100)
-
-let grid = document.getElementById("cell");
-
-function gol(){
-	console.log(grid.innerText);
-	let cell = grid.innerText;
-	switch(cell[10]){
-		case 0:
-			if(cell[11] == 1 && cell[9] == 1){
-				cell[10] = "1"	
-			}
-			break;
-		case 1:
-			if(cell[11] == 1 && cell[9] == 1){
-				cell[10] = "0"
-			}
-			break;
-	}
-	console.log(cell)
-	sleep(1000);
-	grid.innerText = cell;
-}
-gol();

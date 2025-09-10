@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Permission-Policy" content="speaker=(self)" />
-    <link
-      rel="stylesheet"
-      href="/static/style.css"
-    />
-    <link rel="icon" href="/static/favicon.ico" />
 
-    <title>Website</title>
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<title>Website</title>
+	<link rel="stylesheet" type="text/css" href="/static/log_style.css" />
+</head>
 
-  <body id="body">
+<body>
+	<div id="loading">
+		<p></p>
+	</div>
+	<form action="/main.html" method="">
+		<div id="info">
+			<h1 id="login-title"></h1>
+			<label name="username">username</label>
+			<input type="text" name="username" palceholder=">username">
+			<label name="pass">password</label>
+			<input type="password" name="pass" palceholder=">password">
+			<input type="submit" value="Get in"/>
+		</div>
+		<div id="img-container">
+			<p class="lines" ></p>
+			<p class="lines"></p>
+			<p class="lines"></p>
+			<p class="lines"></p>
+			<p class="lines"></p>
+			<p class="lines"></p>
+		</div>
+		
+	</form>
 
-	  <div id="loading"><p>...</p></div>
-    <a href="login.html"> login</a>
-    <audio
-      src="/static/assets/error.mp3"
-      id="S_err"
-    ></audio>
-
-    <audio
-      id="click"
-      src="/static/assets/mouse_click.mp3"
-      type="audio/mp3"
-    ></audio>
-
-    <audio id="audio">
-      <source
-        id="open"
-        src="/static/assets/open_win.mp3"
-        type="audio/mp3"
-      />
-      <source
-        id="close"
-        src="/static/assets/close_win.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <div id="lIcons">
-      <div class="icon" id="about">
-        <img
-          src="/static/assets/main.ico"
-          alt="pc-icon"
-          draggable="false"
-        />
-
-        <p>about</p>
-      </div>
-      <div class="icon" id="projects">
-        <img
-          src="/static/assets/projects.ico"
-          alt="pc-icon"
-          draggable="false"
-          width="40"
-        />
-        <p>Projects</p>
-      </div>
-      <div class="icon" id="contact">
-        <img
-          src="/static/assets/contact.ico"
-          alt="pc-icon"
-          draggable="false"
-          width="40"
-        />
-        <p>Contact me</p>
-      </div>
-
-    </div>
-
-    <div id="windows"></div>
-
-    <script src="/static/script.js"></script>
-  </body>
+	<script src="/static/log_script.js" ></script>
+	<script src="/static/loading.js"></script>
+</body>
 </html>
