@@ -1,215 +1,217 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: CozetteVector, Maple Mono;
-    list-style: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: CozetteVector, Maple Mono;
+	list-style: none;
 }
 
 body {
-    background-color: rgb(11, 153, 158);
-    height: 100vh;
-    background-color: black;
-    /*background-image: url("/static/assets/berserk.jpg");*/
-    background-position: center;
-    background-size: 100%;
-    overflow: hidden;
+	height: 100%;
+	background-color: rgb(11, 153, 158);
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
+	animation: move 15s linear infinite forwards alternate;
+	background-size: cover;
+	overflow: hidden;
+}
 
+@keyframes move{
+	from{
+		background-position: 0 0;
+	}
+	to{
+		background-position: 200px 200px;
+	}
 }
 
 .icon {
-    color: white;
-    position: relative;
-    width: fit-content;
-    height: fit-content;
-    user-select: none;
-    text-align: center;
-    &>p {
-        width: 50px;
-        text-align: center;
-    }
+	color: white;
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	user-select: none;
+	text-align: center;
+	&>p {
+		width: 50px;
+		text-align: center;
+	}
 }
 
 .icon:hover {
-    transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
 }
 
 #lIcons {
-    padding: 4rem;
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 3rem;
-    text-align: start;
+	padding: 4rem;
+	display: flex;
+	width: fit-content;
+	height: fit-content;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	gap: 3rem;
+	text-align: start;
 }
 
 .window-bar {
-    width: 100%;
-    height: 40px;
-    background-color: rgb(201, 201, 201);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 0 5px;
-    user-select: none;
-    background-image: linear-gradient( to right, rgb(29, 29, 80) 30%, rgb(201, 201, 201) 100%);
-    &>.bar-title {
-        color: white;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
-    }
-    &>div {
-        display: flex;
-        gap: 1rem;
-        width: 25%;
-        text-align: center;
-    }
+	width: 100%;
+	height: 40px;
+	background-color: rgb(201, 201, 201);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 0 5px;
+	user-select: none;
+	background-image: linear-gradient( to right, rgb(29, 29, 80) 30%, rgb(201, 201, 201) 100%);
+	&>.bar-title {
+		color: white;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		width: fit-content;
+	}
+	&>div {
+		display: flex;
+		gap: 1rem;
+		width: 25%;
+		text-align: center;
+	}
 }
 
 #windows{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
 
 }
 
 .window {
-    position: absolute;
-    background-color: rgb(192, 192, 192);
+	position: absolute;
+	background-color: rgb(192, 192, 192);
 }
 
 #content {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    width: 90%;
-    justify-content: space-evenly;
-    gap: 2rem;
-    align-self: flex-end;
-    border: solid 2px rgb(136, 136, 136);
-    overflow-y: hidden;
-    margin: 2rem;
-    h1 {
-        font-size: 3rem;
-    }
-    li {
-        text-align: start;
-    }
+	display: flex;
+	flex-direction: row;
+	padding: 1rem;
+	width: 90%;
+	justify-content: space-evenly;
+	gap: 2rem;
+	align-self: flex-end;
+	border: solid 2px rgb(136, 136, 136);
+	overflow-y: hidden;
+	margin: 2rem;
+	h1 {
+		font-size: 3rem;
+	}
+	li {
+		text-align: start;
+	}
 }
 #proPic {
-    border: solid 2px grey;
+	border: solid 2px grey;
 }
 
 .elements {
-    display: inline;
-    padding: 0.2rem;
-    width: 100%;
-    border: solid 2px rgb(201, 201, 201);
-    border-bottom: solid 2px black;
+	display: inline;
+	padding: 0.2rem;
+	width: 100%;
+	border: solid 2px rgb(201, 201, 201);
+	border-bottom: solid 2px black;
 }
 
 .elements.close:hover {
-    color: white;
-    background-color: #d8274e;
+	color: white;
+	background-color: #d8274e;
 }
 
 .about {
-    width: 35.25rem;
-    height: 40.75rem;
-    display: flex;
-    border: solid 1.6px black;
-    flex-direction: column;
+	width: 35.25rem;
+	height: 40.75rem;
+	display: flex;
+	border: solid 1.6px black;
+	flex-direction: column;
 }
 
 #top-bar {
-    display: flex;
-    flex-direction: row;
-    font-size: 2rem;
-    text-align: center;
-    user-select: none;
-    &>#me {
-        background-color: rgb(192, 192, 192);
-        border: solid 2px black;
-        border-bottom: solid 2px white;
-        width: 100%;
-        cursor: pointer;
-    }
-    &>#links {
-        background-color: rgb(192, 192, 192);
-        border: solid 2px white;
-        border-bottom: solid 2px black;
-        width: 100%;
-        cursor: pointer;
-    }
+	display: flex;
+	flex-direction: row;
+	font-size: 2rem;
+	text-align: center;
+	user-select: none;
+	&>#me {
+		background-color: rgb(192, 192, 192);
+		border: solid 2px black;
+		border-bottom: solid 2px white;
+		width: 100%;
+		cursor: pointer;
+	}
+	&>#links {
+		background-color: rgb(192, 192, 192);
+		border: solid 2px white;
+		border-bottom: solid 2px black;
+		width: 100%;
+		cursor: pointer;
+	}
 }
 
 #form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    &>textarea {
-        resize: none;
-        width: 385px;
-        height: 193px;
-    }
-    &>*:focus {
-        outline: 1px solid black;
-    }
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	&>textarea {
+		resize: none;
+		width: 385px;
+		height: 193px;
+	}
+	&>*:focus {
+		outline: 1px solid black;
+	}
 }
 
 #contact-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem;
-    width: fit-content;
-    height: fit-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+	gap: 1rem;
+	width: fit-content;
+	height: fit-content;
 }
 
 #error-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem;
-    width: fit-content;
-    height: fit-content;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+	gap: 1rem;
+	width: fit-content;
+	height: fit-content;
 }
 
 #error {
-    border: solid 1px;
-    width: 30rem;
+	border: solid 1px;
+	width: 30rem;
 }
 
 #ad-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 1rem;
-    gap: 1rem;
-    width: fit-content;
-    height: fit-content;
-    &>img{
-    overflow: auto;
-
-        outline: solid 2px rgb(255, 141, 141);
-        width: 100%;
-        height: 100%;
-    }
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 1rem;
+	gap: 1rem;
+	width: fit-content;
+	height: fit-content;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
 }
 
 #ad {
-    width: 30rem;
-    height: 12.5rem;
+	width: 30rem;
 }
 
 @keyframes fade{
@@ -221,10 +223,8 @@ body {
 
 #loading{
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	position: absolute;
 	width: 100vw;
 	height: 100vh;
 	background-color: black;
@@ -237,17 +237,17 @@ body {
 	}
 }
 #welcome{
-	background-color: rgba(255,255,255,0);
+	background-color: transparent;
 	width: 100vw;
 	position: absolute;
-	top: 30vh;
-	height: fit-content;
+	height: 100vh;
 	display: none;
 	z-index: 10;
 	justify-content: center;
 	align-items: center;
 	&>*{
-		font-size: 30vh;
+		padding: 3rem;
+		font-size: 5vh;
 		background-color: white;
 	}
 }

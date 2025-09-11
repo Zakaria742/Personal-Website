@@ -14,36 +14,39 @@
   </head>
 
   <body id="body">
-
 	  <div id="loading"><p>...</p></div>
-    <a href="index.html"> login</a>
-    <div id="welcome">
-	    <h1>WELCOME!</h1>
-    </div>
-    <audio
-      src="/static/assets/error.mp3"
-      id="S_err"
-    ></audio>
+	  <div id="welcome">
+		  <h1>WELCOME!</h1>
+	  </div>
 
-    <audio
-      id="click"
-      src="/static/assets/mouse_click.mp3"
-      type="audio/mp3"
-    ></audio>
+	  <audio src="/static/assets/Pickup1.wav" id="pickup"></audio>
+	  <audio id="audio">
+		  <source
+				  id="open"
+				  src="/static/assets/open_win2.wav"
+				  type="audio/mp3"
+				  />
+		  <source
+				  id="close"
+				  src="/static/assets/close_win3.wav"
+				  type="audio/mp3"
+				  />
+		  <source
+				  id="click"
+				  src="/static/assets/mouse_click.mp3"
+				  type="audio/mp3"
+				  />
 
-    <audio id="audio">
-      <source
-        id="open"
-        src="/static/assets/open_win.mp3"
-        type="audio/mp3"
-      />
-      <source
-        id="close"
-        src="/static/assets/close_win.mp3"
-        type="audio/mp3"
-      />
-    </audio>
-    <div id="lIcons">
+		  <source
+				  src="/static/assets/error.mp3"
+				  id="S_err"
+				  />
+		  <source
+				  src="/static/assets/select3.wav"
+				  type="audio/wav"
+				  /\>
+	  </audio>
+	  <div id="lIcons">
       <div class="icon" id="about">
         <img
           src="/static/assets/main.ico"
@@ -76,7 +79,7 @@
 
     <div id="windows"></div>
 
-    <script src="/static/script.js"></script>
+    <script src="/static/script.js" type="module"></script>
     <script src="/static/loading.js"></script>
   </body>
 </html>
