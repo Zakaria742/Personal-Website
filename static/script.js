@@ -73,7 +73,7 @@ document.addEventListener("mouseup", () => {
 document.addEventListener("dblclick", (e) => {
 	let itarget = e.target.parentElement;
 	if (itarget) {
-		audio.volume = 0.5;
+		audio.volume = 1;
 		let div = document.createElement("div");
 		div.style.left = `${Math.random()*window.innerWidth/2}px`;
 		div.style.top = `${Math.random()*window.innerHeight/2}px`;
@@ -262,7 +262,7 @@ fetchAds().then( async response => {
 	let ads = await Object.values(response);
 	ad_text = ads[parseInt(Math.random()*2)];
 });
-const seconds = 200000;
+const seconds = 20;
 let adsInterval = setInterval(() => {
 	fetchAds().then( async response => {
 		let ads = await Object.values(response);
