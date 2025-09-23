@@ -14,17 +14,22 @@ let y = 0;
 let isHolding = false;
 let target;
 
-const audio = document.getElementById("audio");
 let about = document.getElementById("about");
 let windows = document.getElementById("windows");
+
+const open = new Audio("static/assets/audio/open_win2.wav");
+const close = new Audio("static/assets/audio/close_win3.wav");
+const click = new Audio("static/assets/audio/mouse_click.mp3");
+const error = new Audio("static/assets/audio/error.mp3");
+const select = new Audio("static/assets/audio/select3.wav");
+const pickup = new Audio("static/assets/audio/Pickup1.wav");
+
+error.play();
 
 let icons = document.querySelectorAll(".icon");
 icons.forEach( e=>{
 	e.addEventListener("mouseenter", () => {
-		audio.volume = 0.2;
-		audio.src = audio.children[4].src;
-		audio.type = audio.children[4].type;
-		audio.play();
+		select.play();
 	})
 })
 //Interval variable
@@ -73,15 +78,12 @@ document.addEventListener("mouseup", () => {
 document.addEventListener("dblclick", (e) => {
 	let itarget = e.target.parentElement;
 	if (itarget) {
-		audio.volume = 1;
 		let div = document.createElement("div");
 		div.style.left = `${Math.random()*window.innerWidth/2}px`;
 		div.style.top = `${Math.random()*window.innerHeight/2}px`;
-		audio.src = audio.children[0].src;
-		audio.type = audio.children[0].type;
 		switch (itarget.id) {
 			case "about":
-				audio.play();
+				open.play();
 
 				div.setAttribute("class", "window");
 
@@ -89,7 +91,7 @@ document.addEventListener("dblclick", (e) => {
 	<div class="window about">
       <div class="window-bar">
 	<div class="bar-title">
-	<img src="/static/assets/system.ico" />
+	<img src="/static/assets/imgs/system.ico" />
 	<p>System Properties</p>
 	</div>
 	<div>
@@ -101,7 +103,7 @@ document.addEventListener("dblclick", (e) => {
 	  <li id="links">Links</li>
 	</ul>
       <div id="content">
-    <img src="/static/assets/smoking.png" id="proPic" alt="profile-pic" width="200px" height="150px">
+    <img src="/static/assets/imgs/smoking.png" id="proPic" alt="profile-pic" width="200px" height="150px">
 	<div>
 	<h1>Hello!</h1>
 	<h3>System :</h3>
@@ -113,11 +115,11 @@ document.addEventListener("dblclick", (e) => {
 	 <p>Programming & coding (current running time : too much for my mental health)</p>
 	 <br/>
 	<h3>Services : </h3>
-	<p>Python.Flask [|||||     ]</p>
-	<p>JavaScript   [||||||    ]</p>
-	<p>SQL [||||||||| ]</p>
-	<p>C            [||||||||| ]</p>
-	<p>C++          [|||||||   ]</p>
+	<p>Python.Flask [|         ]</p>
+	<p>JavaScript   [|         ]</p>
+	<p>SQL [|         ]</p>
+	<p>C            [|         ]</p>
+	<p>C++          [|         ]</p>
 	 </div>
 	</div>
       </div>
@@ -128,13 +130,13 @@ document.addEventListener("dblclick", (e) => {
 				windows.appendChild(div);
 				break;
 			case "contact":
-				audio.play();
+				open.play();
 				div.setAttribute("class", "window");
 				div.innerHTML = ` 
 	<div class="window contact">
 		<div class="window-bar">
 		<div class="bar-title">
-		    <img src="/static/assets/contact.ico" />
+		    <img src="/static/assets/imgs/contact.ico" />
 		    <p>Contact me</p>
 		</div>
 		    <div>
@@ -157,15 +159,13 @@ document.addEventListener("dblclick", (e) => {
 				windows.appendChild(div);
 				break;
 			case "projects":
-				audio.src = audio.children[3].src;
-				audio.type = audio.children[3].type;
-				audio.play();
+				error.play();
 				div.setAttribute("class", "window");
 				div.innerHTML = ` 
 	<div class="window error" id="error">
 		<div class="window-bar">
 		    <div class="bar-title">
-			<img src="/static/assets/error.ico" alt="">
+			<img src="/static/assets/imgs/error.ico" alt="">
 			<p>Access Denied</p>
 		    </div>
 		    <div>
@@ -188,14 +188,10 @@ document.addEventListener("dblclick", (e) => {
 
 //closing window
 document.addEventListener("click", (e) => {
-  audio.src = audio.children[2].src;
-  audio.type = audio.children[2].type;
-  audio.play();
+  click.play();
   //audio for closing the window
   if (e.target.classList[1] == "close") {
-    audio.src = audio.children[1].src;
-    audio.type = audio.children[1].type;
-    audio.play();
+    close.play();
 
     windows.removeChild(
       e.target.parentElement.parentElement.parentElement.parentElement
@@ -215,25 +211,26 @@ document.addEventListener("mousedown", (e) => {
     wtarget.parentElement.nextElementSibling.style.alignSelf = "flex-end";
 
     wtarget.parentElement.nextElementSibling.innerHTML = `
-    <img src="/static/assets/smoking.png" id="proPic" alt="profile-pic" width="200px" height="150px">
-    <div>
+    <img src="/static/assets/imgs/smoking.png" id="proPic" alt="profile-pic" width="200px" height="150px">
+        <div>
         <h1>Hello!</h1>
         <h3>System :</h3>
-        <p>Name : Portfolio</p>
-        <p>Owner : Zakaria Zaki</p>
-        <br/>
-        <h3>Tasks : </h3>
-        <p>playing games (current running time: not much)</p>
-        <p>Programming & coding (current running time : too much for my mental health)</p>
-        <br/>
+         <p>Name : Portfolio</p>
+         <p>Owner : Zakaria Zaki</p>
+         <br/>
+         <h3>Tasks : </h3>
+         <p>playing games (current running time: not much)</p>
+         <p>Programming & coding (current running time : too much for my mental health)</p>
+         <br/>
         <h3>Services : </h3>
-        <p>Python.Flask [|||||     ]</p>
-        <p>JavaScript   [||||||    ]</p>
-        <p>SQL [||||||||| ]</p>
-        <p>C            [||||||||  ]</p>
-        <p>C++          [|||||||   ]</p>
-
-         </div>`;
+        <p>Python.Flask [|         ]</p>
+        <p>JavaScript   [|         ]</p>
+        <p>SQL [|         ]</p>
+        <p>C            [|         ]</p>
+        <p>C++          [|         ]</p>
+         </div>
+	  `
+;
   } else if (wtarget.id == "links") {
     wtarget.style.border = "solid 2px black";
     wtarget.style.backgroundColor = "rgb(192, 192, 192)";
@@ -288,7 +285,5 @@ let adsInterval = setInterval(() => {
 	ad_window.style.left = `${Math.random()*window.innerWidth/2}px`;
 	ad_window.style.top = `${Math.random()*window.innerHeight/2}px`;
 	windows.appendChild(ad_window);
-	audio.src = audio.children[0].src;
-	audio.type = audio.children[0].type;
-	audio.play();
+	open.play();
 }, seconds * Math.pow(10, 3));
