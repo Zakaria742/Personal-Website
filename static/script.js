@@ -259,7 +259,10 @@ fetchAds().then( async response => {
 	let ads = await Object.values(response);
 	ad_text = ads[parseInt(Math.random()*2)];
 });
-const seconds = 20;
+const seconds = 10000;
+window.onload = () => {
+	const seconds = 20;
+}
 let adsInterval = setInterval(() => {
 	fetchAds().then( async response => {
 		let ads = await Object.values(response);
