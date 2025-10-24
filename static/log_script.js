@@ -1,5 +1,5 @@
 let lines = document.querySelectorAll(".lines");
-let ascii_box = document.getElementById("img-container");
+let ascii_box = document.getElementById("gibberish-container");
 let login_title = document.getElementById("login-title");
 let k = 0;
 

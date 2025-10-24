@@ -1,7 +1,8 @@
 
 let load = document.getElementById("loading");
 let welcome = document.getElementById("welcome");
-let w_sound = document.getElementById("pickup");
+let w_sound = new Audio("static/assets/audio/Pickup1.wav");
+w_sound.volume = 0.2;
 let l = 0;
 
 if(sessionStorage.getItem("wShown")){

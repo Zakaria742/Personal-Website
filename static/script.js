@@ -20,17 +20,20 @@ let windows = document.getElementById("windows");
 const open = new Audio("static/assets/audio/open_win2.wav");
 const close = new Audio("static/assets/audio/close_win3.wav");
 const click = new Audio("static/assets/audio/mouse_click.mp3");
+click.volume = 0.1;
 const error = new Audio("static/assets/audio/error.mp3");
 const select = new Audio("static/assets/audio/select3.wav");
+select.volume = 0.1;
 const pickup = new Audio("static/assets/audio/Pickup1.wav");
 
-error.play();
-
 let icons = document.querySelectorAll(".icon");
+//let p = 0
 icons.forEach( e=>{
 	e.addEventListener("mouseenter", () => {
 		select.play();
 	})
+	//p+=100
+	//e.style.top = `${p}px`
 })
 //Interval variable
 let inter;
@@ -39,7 +42,6 @@ let wtarget;
 //count for the layer index (z-index)
 let count = 0;
 
-//Screen revealer
 
 //Getting mouse position
 document.addEventListener("mousemove", function (e) {
@@ -67,11 +69,27 @@ document.addEventListener("mousedown", (e) => {
       }
     }, 0);
   }
+/*else if(wtarget.parentElement.classList.contains("icon")){
+	isHolding = true;
+    if (inter) {
+      clearInterval(inter);
+    }
+    let a = wtarget.parentElement.getBoundingClientRect();
+    let cx = x;
+    let cy = y;
+    inter = setInterval(() => {
+      if (isHolding) {
+        wtarget.parentElement.style.left = `${x - cx + a.x}px`;
+        wtarget.parentElement.style.top =  `${y - cy + a.y}px`;
+      }
+    }, 0);
+  }*/
 });
 
 //Letting go of the window in case of letting the mouse
-document.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", (e) => {
   isHolding = false;
+
 });
 
 // Opening the window
@@ -189,6 +207,10 @@ document.addEventListener("dblclick", (e) => {
 //closing window
 document.addEventListener("click", (e) => {
   click.play();
+  setTimeout(() => {
+	e.target.style.cursor = "url('static/assets/imgs/pointer1.png'), default";
+	 }, 500);
+  e.target.style.cursor = "url('static/assets/imgs/click.png'), pointer";
   //audio for closing the window
   if (e.target.classList[1] == "close") {
     close.play();
@@ -259,10 +281,7 @@ fetchAds().then( async response => {
 	let ads = await Object.values(response);
 	ad_text = ads[parseInt(Math.random()*2)];
 });
-const seconds = 10000;
-window.onload = () => {
-	const seconds = 20;
-}
+const seconds = 20;
 let adsInterval = setInterval(() => {
 	fetchAds().then( async response => {
 		let ads = await Object.values(response);
